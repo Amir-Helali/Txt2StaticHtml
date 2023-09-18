@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Text2StaticHtml": {
+      "commandName": "Project",
+      "commandLineArgs": "--output C:\\Users\\dioio\\Desktop\\Text2StaticHtml\\InputDirectory fweaofeuiaeaf"
+    }
+  }
+}
