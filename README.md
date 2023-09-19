@@ -20,7 +20,7 @@ Text2StaticHtml
 
 ## Options & Usage
 
-- Convert a single file or text files in a directory to html: `By defaul the ouput directory containing the converted file(s) will be in current directory under the name "til"`
+- Convert a single file or text files in a directory to html: `By default the ouput directory containing the converted file(s) will be in current directory under the name "til"`
 ```
 Text2StaticHtml <Inputpath>
 ```
