@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace Text2StaticHtml
 {
@@ -39,7 +40,7 @@ namespace Text2StaticHtml
                     {
                         string path = args[0];
                         // Check if the file is a text file
-                        if (Path.GetExtension(path) != ".txt")
+                        if (Path.GetExtension(path) != ".txt" || Path.GetExtension(path) != ".md")
                         {
                             Helper.DisplayPathError();
                             return;
@@ -58,8 +59,12 @@ namespace Text2StaticHtml
                     {
                         string outputDirectory = Path.Combine(Directory.GetCurrentDirectory(), "til");
                         string path = args[0];
-                        // Only get text files in the directory
-                        List<string> files = Directory.GetFiles(path, "*.txt").ToList();
+                        // Only get text & md files in the directory
+                        Regex reg = new Regex("^.*.(txt|md)");
+                        List<string> files = Directory.GetFiles(path)
+                            .Where(path => reg.IsMatch(path))
+                            .ToList();
+
                         if (files.Count == 0)
                         {
                             Helper.DisplayPathError();
@@ -94,7 +99,7 @@ namespace Text2StaticHtml
                             if (File.Exists(args[2]))
                             {
                                 string path = args[2];
-                                if (Path.GetExtension(path) != ".txt")
+                                if (Path.GetExtension(path) != ".txt" || Path.GetExtension(path) != ".md")
                                 {
                                     Helper.DisplayPathError();
                                     return;
@@ -112,7 +117,10 @@ namespace Text2StaticHtml
                             {
                                 string outputDirectory = Path.Combine(Directory.GetCurrentDirectory(), "til");
                                 string path = args[2];
-                                List<string> files = Directory.GetFiles(path, "*.txt").ToList();
+                                Regex reg = new Regex("^.*.(txt|md)");
+                                List<string> files = Directory.GetFiles(path)
+                                    .Where(path => reg.IsMatch(path))
+                                    .ToList();
                                 if (files.Count == 0)
                                 {
                                     Helper.DisplayPathError();
@@ -172,7 +180,10 @@ namespace Text2StaticHtml
                                 {
                                     string outputDirectory = args[2];
                                     string path = args[1];
-                                    List<string> files = Directory.GetFiles(path, "*.txt").ToList();
+                                    Regex reg = new Regex("^.*.(txt|md)");
+                                    List<string> files = Directory.GetFiles(path)
+                                        .Where(path => reg.IsMatch(path))
+                                        .ToList();
                                     if (files.Count == 0)
                                     {
                                         Helper.DisplayPathError();
@@ -210,7 +221,7 @@ namespace Text2StaticHtml
                                 if (File.Exists(args[1]))
                                 {
                                     string path = args[1];
-                                    if (Path.GetExtension(path) != ".txt")
+                                    if (Path.GetExtension(path) != ".txt" || Path.GetExtension(path) != ".md")
                                     {
                                         Helper.DisplayPathError();
                                         return;
@@ -228,7 +239,10 @@ namespace Text2StaticHtml
                                 {
                                     string outputDirectory = Path.Combine(Directory.GetCurrentDirectory(), "til");
                                     string path = args[1];
-                                    List<string> files = Directory.GetFiles(path, "*.txt").ToList();
+                                    Regex reg = new Regex("^.*.(txt|md)");
+                                    List<string> files = Directory.GetFiles(path)
+                                        .Where(path => reg.IsMatch(path))
+                                        .ToList();
                                     if (files.Count == 0)
                                     {
                                         Helper.DisplayPathError();

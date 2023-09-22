@@ -2,7 +2,7 @@
   "profiles": {
     "Text2StaticHtml": {
       "commandName": "Project",
-      "commandLineArgs": "--output C:\\Users\\dioio\\Desktop\\Text2StaticHtml\\InputDirectory fweaofeuiaeaf"
+      "commandLineArgs": "-o G:\\GithubFinalSem\\Txt2StaticHtml\\Examples\\InputDirectory G:\\GithubFinalSem\\Txt2StaticHtml\\Examples\\OutputDirectory "
     }
   }
 }

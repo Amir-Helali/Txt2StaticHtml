@@ -13,3 +13,17 @@ C:\Users\dioio\Desktop\Text2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug
 C:\Users\dioio\Desktop\Text2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\Text2StaticHtml.pdb
 C:\Users\dioio\Desktop\Text2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\Text2StaticHtml.genruntimeconfig.cache
 C:\Users\dioio\Desktop\Text2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\ref\Text2StaticHtml.dll
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\bin\Debug\net6.0\Text2StaticHtml.exe
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\bin\Debug\net6.0\Text2StaticHtml.deps.json
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\bin\Debug\net6.0\Text2StaticHtml.runtimeconfig.json
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\bin\Debug\net6.0\Text2StaticHtml.dll
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\bin\Debug\net6.0\Text2StaticHtml.pdb
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\Text2StaticHtml.GeneratedMSBuildEditorConfig.editorconfig
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\Text2StaticHtml.AssemblyInfoInputs.cache
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\Text2StaticHtml.AssemblyInfo.cs
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\Text2StaticHtml.csproj.CoreCompileInputs.cache
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\Text2StaticHtml.dll
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\refint\Text2StaticHtml.dll
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\Text2StaticHtml.pdb
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\Text2StaticHtml.genruntimeconfig.cache
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net6.0\ref\Text2StaticHtml.dll

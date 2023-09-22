@@ -1,6 +1,6 @@
 # Txt2StaticHtml
 
-Txt2StaticHtml is a command line tool for converting text files to static HTML files. 
+Txt2StaticHtml is a command line tool for converting text and markdown files to static HTML files. 
 
 ## Setup
 
@@ -20,7 +20,7 @@ Text2StaticHtml
 
 ## Options & Usage
 
-- Convert a single file or text files in a directory to html: `By default the ouput directory containing the converted file(s) will be in current directory under the name "til"`
+- Convert a single file, text files, and markdown files in a directory to html: `By default the ouput directory containing the converted file(s) will be in current directory under the name "til"`
 ```
 Text2StaticHtml <Inputpath>
 ```
@@ -144,6 +144,49 @@ Example1.html (With stylesheet applied):
 	</p>
 	<p>
 	Et corrupti laudantium nam voluptates quos in animi culpa et magnam officiis sit delectus error et omnis rerum vel dolorem ipsam? Id eligendi consequatur sit ipsa similique qui excepturi earum est nostrum voluptatum. Et veritatis eligendi et odit magnam aut velit voluptas non molestiae iste hic nisi soluta aut omnis aperiam ut dolores dolor!
+	</p>
+</body>
+</html>
+```
+```
+Text2StaticHtml Example2.md
+```
+Example2.md
+```md 
+# Lorem ipsum dolor sit amet. Qui ipsam quas eum voluptas quis sed natus rerum. Ut modi consequatur id corporis quisquam vel quia esse non cumque nemo. Eos vero nostrum aut repudiandae molestiae et sint aliquam! Eos cumque praesentium vel sint exercitationem sed magnam autem sit quidem voluptatem et fuga doloremque.
+
+
+
+## Ut cumque enim est voluptate dolor aut explicabo nihil. Est omnis vitae qui molestias magnam eos iure dolorum eos repellendus repellat et magnam optio? Et perferendis quasi ea voluptatem adipisci quo architecto porro! Et ipsum minus et quae consequuntur et similique veritatis et deserunt molestias qui corporis distinctio rem voluptas enim!
+
+
+
+[link](link)
+
+Sed neque repellendus hic distinctio dolor rem Quis rerum. Sit recusandae accusamus ut laborum ipsam ut aliquid sint. Sed dolor animi vel deserunt velit et galisum molestiae vel labore quaerat id distinctio aliquid.
+```
+Example2.html
+```html
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Example2.md</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h1>
+	 Lorem ipsum dolor sit amet. Qui ipsam quas eum voluptas quis sed natus rerum. Ut modi consequatur id corporis quisquam vel quia esse non cumque nemo. Eos vero nostrum aut repudiandae molestiae et sint aliquam! Eos cumque praesentium vel sint exercitationem sed magnam autem sit quidem voluptatem et fuga doloremque.
+	</h1>
+	<h2>
+	 Ut cumque enim est voluptate dolor aut explicabo nihil. Est omnis vitae qui molestias magnam eos iure dolorum eos repellendus repellat et magnam optio? Et perferendis quasi ea voluptatem adipisci quo architecto porro! Et ipsum minus et quae consequuntur et similique veritatis et deserunt molestias qui corporis distinctio rem voluptas enim!
+	</h2>
+	<a href=link>
+	link
+	</a>
+	<p>
+	Sed neque repellendus hic distinctio dolor rem Quis rerum. Sit recusandae accusamus ut laborum ipsam ut aliquid sint. Sed dolor animi vel deserunt velit et galisum molestiae vel labore quaerat id distinctio aliquid.
 	</p>
 </body>
 </html>
