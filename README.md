@@ -1,6 +1,6 @@
 # Txt2StaticHtml
 
-eTxt2StaticHtml is a command line tool for converting text and markdown files to static HTML files. 
+Txt2StaticHtml is a command line tool for converting text and markdown files to static HTML files. 
 
 ## Setup
 
