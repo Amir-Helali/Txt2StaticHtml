@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Text2StaticHtml
@@ -57,15 +58,49 @@ namespace Text2StaticHtml
         // Converts the contents of a text file to html and returns the converted content as a string
         public static string TextToHtmlConverter (string fileName, string path, string stylesheetUrl)
         {
+            string fileExt = Path.GetExtension(fileName);
             string content = File.ReadAllText(path);
-            string[] paragraphs = content.Split(new string[] {Environment.NewLine + Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries);
-            string html = $"<!doctype html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"utf-8\">\n\t<title>{fileName}</title>" +
-                $"\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" +
-                $"\n\t<link rel=\"stylesheet\" href=\"{stylesheetUrl}\">\n</head>\n<body>";
+            string[] paragraphs = content.Split(new string[] { Environment.NewLine + Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            string html = "";
+            bool md = false;
+            html = $"<!doctype html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"utf-8\">\n\t<title>{fileName.Split(".")[0]}</title>" +
+            $"\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" +
+            $"\n\t<link rel=\"stylesheet\" href=\"{stylesheetUrl}\">\n</head>";
+            if (fileExt == ".md")
+            {
+                Console.WriteLine("MD File");
+                md = true;
+                if(paragraphs[0].StartsWith("# ")) {
+                    html += $"\n\t<h1>\n\t{paragraphs[0].Replace("#", "")}\n\t</h1>";
+                }
+            } else if (fileExt == ".txt") {
+                Console.WriteLine("TXT File");
+            }
+            html += "\n<body>";
             foreach (string p in paragraphs)
             {
                 string paragraph = p.Trim();
-                html += $"\n\t<p>\n\t{paragraph}\n\t</p>";
+                if (md)
+                {
+                    Regex reg = new Regex("\\[([^]]*)\\]\\(([^\\s^\\)]*)[\\s\\)]");
+                    if (p.StartsWith("##"))
+                    {
+                        html += $"\n\t<h2>\n\t{paragraph.Replace("##", "")}\n\t</h2>";
+                    }
+                    else if (reg.IsMatch(p))
+                    {
+                        Match m = reg.Match(p);
+                        html += $"\n\t<a href={m.Groups[1]}>\n\t{m.Groups[2]}\n\t</a>";
+                    }
+                    else 
+                    {
+                        html += $"\n\t<p>\n\t{p}\n\t</p>";
+                    }
+                }
+                else
+                {
+                    html += $"\n\t<p>\n\t{paragraph}\n\t</p>";
+                }
             }
             html += "\n</body>\n</html>";
             
@@ -74,8 +109,8 @@ namespace Text2StaticHtml
         // Creates the html file(s) and saves them to the approprite directory
         public static void FinalizeOutput(string path, string outPutDirectory, string stylesheetUrl = "")
         {
-            string textFileName = Path.GetFileNameWithoutExtension(path);
-            string htmlFileName = textFileName + ".html";        
+            string textFileName = Path.GetFileName(path);
+            string htmlFileName = Path.GetFileNameWithoutExtension(path) + ".html";        
             string outputFilePath = Path.Combine(outPutDirectory, htmlFileName);
             string html = TextToHtmlConverter(textFileName, path, stylesheetUrl);
             File.WriteAllText(outputFilePath, html);

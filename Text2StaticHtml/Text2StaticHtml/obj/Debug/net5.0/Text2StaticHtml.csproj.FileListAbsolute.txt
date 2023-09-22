@@ -1,0 +1,5 @@
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net5.0\Text2StaticHtml.csproj.AssemblyReference.cache
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net5.0\Text2StaticHtml.GeneratedMSBuildEditorConfig.editorconfig
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net5.0\Text2StaticHtml.AssemblyInfoInputs.cache
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net5.0\Text2StaticHtml.AssemblyInfo.cs
+G:\GithubFinalSem\Txt2StaticHtml\Text2StaticHtml\Text2StaticHtml\obj\Debug\net5.0\Text2StaticHtml.csproj.CoreCompileInputs.cache
