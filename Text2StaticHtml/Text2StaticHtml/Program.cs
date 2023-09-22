@@ -152,7 +152,7 @@ namespace Text2StaticHtml
                                 if (File.Exists(args[1]))
                                 {
                                     string path = args[1];
-                                    if (Path.GetExtension(path) != ".txt")
+                                    if (Path.GetExtension(path) != ".txt" || Path.GetExtension(path) != ".md")
                                     {
                                         Helper.DisplayPathError();
                                         return;

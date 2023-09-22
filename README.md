@@ -151,7 +151,7 @@ Example1.html (With stylesheet applied):
 ```
 Text2StaticHtml Example2.md
 ```
-Example2.md
+Example4.md
 ```md 
 # Lorem ipsum dolor sit amet. Qui ipsam quas eum voluptas quis sed natus rerum. Ut modi consequatur id corporis quisquam vel quia esse non cumque nemo. Eos vero nostrum aut repudiandae molestiae et sint aliquam! Eos cumque praesentium vel sint exercitationem sed magnam autem sit quidem voluptatem et fuga doloremque.
 
@@ -165,7 +165,7 @@ Example2.md
 
 Sed neque repellendus hic distinctio dolor rem Quis rerum. Sit recusandae accusamus ut laborum ipsam ut aliquid sint. Sed dolor animi vel deserunt velit et galisum molestiae vel labore quaerat id distinctio aliquid.
 ```
-Example2.html
+Example4.html
 ```html
 <!doctype html>
 <html lang="en">
