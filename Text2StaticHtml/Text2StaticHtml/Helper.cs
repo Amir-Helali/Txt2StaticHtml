@@ -14,10 +14,10 @@ namespace Text2StaticHtml
         public static void DisplayHelp()
         {
             Console.WriteLine("---Guide---");
-            Console.WriteLine("1. Text2StaticHtml <Path> => <Path> can be a path to .txt file or a directory containing .txt files.");
-            Console.WriteLine("2. Text2StaticHtml -o <InputPath> <OutpuPath> => <InputPath> is the .txt file directory and" +
+            Console.WriteLine("1. Text2StaticHtml <Path> => <Path> can be a path to .txt or .md file or a directory containing .txt or .md files.");
+            Console.WriteLine("2. Text2StaticHtml -o <InputPath> <OutpuPath> => <InputPath> is the .txt or .md file directory and" +
                 " <OutputPath> is the new output directory");
-            Console.WriteLine("3. Text2StaticHtml --output <InputPath> <OutpuPath> => <InputPath> is the .txt file directory " +
+            Console.WriteLine("3. Text2StaticHtml --output <InputPath> <OutpuPath> => <InputPath> is the .txt or .md file directory " +
                 "and <OutputPath> is the new output directory");
             Console.WriteLine("2. Text2StaticHtml -s <StylesheetUrl> <TextFilePath> => <StylesheetUrl> is the url to a custom CSS stylesheet " +
                 "and <TextFilePath> is the path to the text file input");
@@ -43,7 +43,7 @@ namespace Text2StaticHtml
         // Shows an error if the path(s) provided as arguments are incorrect
         public static void DisplayPathError()
         {
-            Console.WriteLine("Please provide a correct path to a .txt file or a directory containing .txt file(s). " +
+            Console.WriteLine("Please provide a correct path to a .txt or .md file or a directory containing .txt or .md file(s). " +
                 "Run the program with -h or --help for help.");
         }
         // Creates a new directory everytime based on the path provided
@@ -91,6 +91,11 @@ namespace Text2StaticHtml
                     {
                         Match m = reg.Match(p);
                         html += $"\n\t<a href={m.Groups[1]}>\n\t{m.Groups[2]}\n\t</a>";
+                    }
+                    else if ((p == "---") || (p == "***") || (p == "___"))
+                    {
+                        
+                        html += $"\n\t<hr>\n\t";
                     }
                     else 
                     {
