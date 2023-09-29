@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "G:\\GithubFinalSem\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\Text2StaticHtml.csproj": {}
+    "C:\\Users\\dioio\\Desktop\\OpenSource\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\Text2StaticHtml.csproj": {}
   },
   "projects": {
-    "G:\\GithubFinalSem\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\Text2StaticHtml.csproj": {
+    "C:\\Users\\dioio\\Desktop\\OpenSource\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\Text2StaticHtml.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\GithubFinalSem\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\Text2StaticHtml.csproj",
+        "projectUniqueName": "C:\\Users\\dioio\\Desktop\\OpenSource\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\Text2StaticHtml.csproj",
         "projectName": "Text2StaticHtml",
-        "projectPath": "G:\\GithubFinalSem\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\Text2StaticHtml.csproj",
-        "packagesPath": "C:\\Users\\lemon\\.nuget\\packages\\",
-        "outputPath": "G:\\GithubFinalSem\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\obj\\",
+        "projectPath": "C:\\Users\\dioio\\Desktop\\OpenSource\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\Text2StaticHtml.csproj",
+        "packagesPath": "C:\\Users\\dioio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dioio\\Desktop\\OpenSource\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lemon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dioio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
