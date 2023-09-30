@@ -38,6 +38,10 @@ Text2StaticHtml -v or --version
 ```
 Text2StaticHtml -s or --stylesheet <stylesheeturl> <inputpath>
 ```
+- Add a language code and apply it to the converted html files(s):
+```
+Text2StaticHtml -l or --lang <language code> <inputpath>
+```
 - Create a custom output directory that already exists (if it doesn't exist, it'll be created): `If <OutputPath> not provided for the custom output directory while using this option, the default "til" directory is used.`
 ```
 Text2StaticHtml -o or --output <inputPath> <OutputPath>
