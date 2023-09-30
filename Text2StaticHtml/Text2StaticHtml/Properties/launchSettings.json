@@ -2,7 +2,7 @@
   "profiles": {
     "Text2StaticHtml": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\dioio\\Desktop\\OpenSource\\Txt2StaticHtml\\Examples\\InputDirectory\\Example4.md"
+      "commandLineArgs": "--lang fr C:\\Users\\dioio\\Desktop\\OpenSource\\Txt2StaticHtml\\Examples\\InputDirectory\\Example5.txt"
     }
   }
 }

@@ -8,7 +8,7 @@ namespace Text2StaticHtml
         static void Main(string[] args)
         {
             // Check if the number of arguments are valid
-            if(args.Length > 3)
+            if (args.Length > 3)
             {
                 Helper.DisplayArgumentsError();
                 return;
@@ -16,12 +16,12 @@ namespace Text2StaticHtml
             else
             {
                 // If 0 arguments show help menu
-                if(args.Length == 0)
+                if (args.Length == 0)
                 {
                     Helper.DisplayHelp();
                     return;
                 }
-                if(args.Length == 1)
+                if (args.Length == 1)
                 {
                     // Show version and name if the argument is -v or --version
                     if (args[0] == "-v" || args[0] == "--version")
@@ -30,7 +30,7 @@ namespace Text2StaticHtml
                         return;
                     }
                     // Show help menu if the argument is -h or --help
-                    else if(args[0] == "-h" || args[0] == "--help")
+                    else if (args[0] == "-h" || args[0] == "--help")
                     {
                         Helper.DisplayHelp();
                         return;
@@ -87,13 +87,13 @@ namespace Text2StaticHtml
                         return;
                     }
                 }
-                if(args.Length == 3 || args.Length == 2)
+                if (args.Length == 3 || args.Length == 2)
                 {
                     // Check for optional feature arguments like -o or --ouput or -s and --stylesheet
-                    if (args[0] == "-o" || args[0] == "--output" || args[0] == "-s" || args[0] == "--stylesheet")
+                    if (args[0] == "-o" || args[0] == "--output" || args[0] == "-s" || args[0] == "--stylesheet" || args[0] == "-l" || args[0] == "--lang")
                     {
                         // If the first argument is -s or --stylesheet use the stylesheet url provided to apply to the html conversion
-                        if ( args.Length == 3 && (args[0] == "-s" || args[0] == "--stylesheet") && (Directory.Exists(args[2]) || File.Exists(args[2])))
+                        if (args.Length == 3 && (args[0] == "-s" || args[0] == "--stylesheet") && (Directory.Exists(args[2]) || File.Exists(args[2])))
                         {
                             string styleSheet = args[1];
                             if (File.Exists(args[2]))
@@ -132,6 +132,56 @@ namespace Text2StaticHtml
                                     foreach (string file in files)
                                     {
                                         Helper.FinalizeOutput(file, outputDirectory, styleSheet);
+                                    }
+                                    Console.WriteLine("Your files were converted");
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                Helper.DisplayPathError();
+                                return;
+                            }
+                        }
+                        else if (args.Length == 3 && (args[0] == "-l" || args[0] == "--lang") && (Directory.Exists(args[2]) || File.Exists(args[2])))
+                        {
+                            string lang = args[1];
+                            if (File.Exists(args[2]))
+                            {
+                                string path = args[2];
+                                if ((Path.GetExtension(path) != ".txt") && (Path.GetExtension(path) != ".md"))
+                                {
+                                    Helper.DisplayPathError();
+                                    return;
+                                }
+                                else
+                                {
+                                    string outputDirectory = Path.Combine(Directory.GetCurrentDirectory(), "til");
+                                    Helper.OutputDirectoryHandler(outputDirectory);
+                                    Helper.FinalizeOutput(path, outputDirectory, "", lang);
+                                    Console.WriteLine("You file was converted.");
+                                    return;
+                                }
+                            }
+                            else if (Directory.Exists(args[2]))
+                            {
+                                string outputDirectory = Path.Combine(Directory.GetCurrentDirectory(), "til");
+                                string path = args[2];
+                                Regex reg = new Regex("^.*.(txt|md)");
+                                List<string> files = Directory.GetFiles(path)
+                                    .Where(path => reg.IsMatch(path))
+                                    .ToList();
+                                if (files.Count == 0)
+                                {
+                                    Helper.DisplayPathError();
+                                    return;
+                                }
+                                else
+                                {
+                                    Helper.OutputDirectoryHandler(outputDirectory);
+                                    foreach (string file in files)
+                                    {
+                                        Helper.FinalizeOutput(file, outputDirectory, "", lang);
                                     }
                                     Console.WriteLine("Your files were converted");
                                     return;
@@ -275,7 +325,7 @@ namespace Text2StaticHtml
                     else
                     {
                         Helper.DisplayArgumentsError();
-                        return;              
+                        return;
                     }
                 }
             }
