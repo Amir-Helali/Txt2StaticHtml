@@ -23,6 +23,7 @@ namespace Text2StaticHtml
                 "and <TextFilePath> is the path to the text file input");
             Console.WriteLine("2. Text2StaticHtml --stylesheet <StylesheetUrl> <TextFilePath> => <StylesheetUrl> is the url to a custom CSS stylesheet " +
                 "and <TextFilePath> is the path to the text file or a directory of text files");
+            Console.WriteLine("5. Text2StaticHtml -l or --lang <language> <TextFilePath> => <Language> use a language code to be included in the converted html file(s)");
             Console.WriteLine("4. Text2StaticHtml -v or --version => Shows the name and the version of the app");
             Console.WriteLine("5. Text2StaticHtml -h or --help => Shows the Guide menu");
             Console.WriteLine("---Guide---");
@@ -56,14 +57,14 @@ namespace Text2StaticHtml
             Directory.CreateDirectory(path);
         }
         // Converts the contents of a text file to html and returns the converted content as a string
-        public static string TextToHtmlConverter (string fileName, string path, string stylesheetUrl)
+        public static string TextToHtmlConverter (string fileName, string path, string stylesheetUrl, string language)
         {
             string fileExt = Path.GetExtension(fileName);
             string content = File.ReadAllText(path);
             string[] paragraphs = content.Split(new string[] { Environment.NewLine + Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             string html = "";
             bool md = false;
-            html = $"<!doctype html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"utf-8\">\n\t<title>{fileName.Split(".")[0]}</title>" +
+            html = $"<!doctype html>\n<html lang=\"{language}\">\n<head>\n\t<meta charset=\"utf-8\">\n\t<title>{fileName.Split(".")[0]}</title>" +
             $"\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" +
             $"\n\t<link rel=\"stylesheet\" href=\"{stylesheetUrl}\">\n</head>";
             if (fileExt == ".md")
@@ -107,12 +108,12 @@ namespace Text2StaticHtml
             return html;
         }
         // Creates the html file(s) and saves them to the approprite directory
-        public static void FinalizeOutput(string path, string outPutDirectory, string stylesheetUrl = "")
+        public static void FinalizeOutput(string path, string outPutDirectory, string stylesheetUrl = "", string lang = "en-CA")
         {
             string textFileName = Path.GetFileName(path);
             string htmlFileName = Path.GetFileNameWithoutExtension(path) + ".html";        
             string outputFilePath = Path.Combine(outPutDirectory, htmlFileName);
-            string html = TextToHtmlConverter(textFileName, path, stylesheetUrl);
+            string html = TextToHtmlConverter(textFileName, path, stylesheetUrl, lang);
             File.WriteAllText(outputFilePath, html);
         }
     }
