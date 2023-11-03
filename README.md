@@ -2,22 +2,6 @@
 
 Txt2StaticHtml is a command line tool for converting text and markdown files to static HTML files. 
 
-## Setup
-
-- Make sure to have .Net SDK installed and added to the Path in evnrionment variables.
-- Clone the repository.
-- Navigate to the local project directory by using the command prompt.
-- Navigate to the Text2StaticHtml directory where the source code is.
-- Build the application by using the command:
-```
-dotnet build
-```
-- Change directory to where the executable file was created: `bin/debug/net6.0 (Your .Net version might be different)`
-- Run the application using the command:
-```
-Text2StaticHtml
-```
-
 ## Options & Usage
 
 - Convert a single file, text files, and markdown files in a directory to html: `By default the ouput directory containing the converted file(s) will be in current directory under the name "til"`

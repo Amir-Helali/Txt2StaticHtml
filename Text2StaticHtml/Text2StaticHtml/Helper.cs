@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace Text2StaticHtml
 {
@@ -28,6 +22,7 @@ namespace Text2StaticHtml
             Console.WriteLine("5. Text2StaticHtml -h or --help => Shows the Guide menu");
             Console.WriteLine("---Guide---");
         }
+
         // Shows the name and the version of the program
         public static void DisplayNameAndVersion()
         {
@@ -36,33 +31,38 @@ namespace Text2StaticHtml
             Console.WriteLine("Name: " + name);
             Console.WriteLine("Version: " + version);
         }
+
         // Shows an error if the arguments provided are incorrect
         public static void DisplayArgumentsError()
         {
             Console.WriteLine("Please provide a correct input. Run the program with -h or --help for help.");
         }
+
         // Shows an error if the path(s) provided as arguments are incorrect
         public static void DisplayPathError()
         {
             Console.WriteLine("Please provide a correct path to a .txt or .md file or a directory containing .txt or .md file(s). " +
                 "Run the program with -h or --help for help.");
         }
+
         // Creates a new directory everytime based on the path provided
-        public static void OutputDirectoryHandler (string path)
+        public static void OutputDirectoryHandler(string path)
         {
             if (Directory.Exists(path))
             {
                 Directory.Delete(path, true);
             }
+
             Directory.CreateDirectory(path);
         }
+
         // Converts the contents of a text file to html and returns the converted content as a string
-        public static string TextToHtmlConverter (string fileName, string path, string stylesheetUrl, string language)
+        public static string TextToHtmlConverter(string fileName, string path, string stylesheetUrl, string language)
         {
             string fileExt = Path.GetExtension(fileName);
             string content = File.ReadAllText(path);
             string[] paragraphs = content.Split(new string[] { Environment.NewLine + Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-            string html = "";
+            string html = string.Empty;
             bool md = false;
             html = $"<!doctype html>\n<html lang=\"{language}\">\n<head>\n\t<meta charset=\"utf-8\">\n\t<title>{fileName.Split(".")[0]}</title>" +
             $"\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" +
@@ -71,12 +71,16 @@ namespace Text2StaticHtml
             {
                 Console.WriteLine("MD File");
                 md = true;
-                if(paragraphs[0].StartsWith("# ")) {
+                if (paragraphs[0].StartsWith("# "))
+                {
                     html += $"\n\t<h1>\n\t{paragraphs[0].Replace("#", "")}\n\t</h1>";
                 }
-            } else if (fileExt == ".txt") {
+            }
+            else if (fileExt == ".txt")
+            {
                 Console.WriteLine("TXT File");
             }
+
             html += "\n<body>";
             foreach (string p in paragraphs)
             {
@@ -95,10 +99,9 @@ namespace Text2StaticHtml
                     }
                     else if ((p == "---") || (p == "***") || (p == "___"))
                     {
-                        
                         html += $"\n\t<hr>\n\t";
                     }
-                    else 
+                    else
                     {
                         html += $"\n\t<p>\n\t{p}\n\t</p>";
                     }
@@ -108,15 +111,17 @@ namespace Text2StaticHtml
                     html += $"\n\t<p>\n\t{paragraph}\n\t</p>";
                 }
             }
+
             html += "\n</body>\n</html>";
-            
+
             return html;
         }
+
         // Creates the html file(s) and saves them to the approprite directory
         public static void FinalizeOutput(string path, string outPutDirectory, string stylesheetUrl = "", string lang = "en-CA")
         {
             string textFileName = Path.GetFileName(path);
-            string htmlFileName = Path.GetFileNameWithoutExtension(path) + ".html";        
+            string htmlFileName = Path.GetFileNameWithoutExtension(path) + ".html";
             string outputFilePath = Path.Combine(outPutDirectory, htmlFileName);
             string html = TextToHtmlConverter(textFileName, path, stylesheetUrl, lang);
             File.WriteAllText(outputFilePath, html);
