@@ -7,10 +7,16 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "Text2StaticHtml/1.0.0": {
+        "dependencies": {
+          "Roslynator.Analyzers": "4.6.1",
+          "Roslynator.CommandLine": "0.7.1"
+        },
         "runtime": {
           "Text2StaticHtml.dll": {}
         }
-      }
+      },
+      "Roslynator.Analyzers/4.6.1": {},
+      "Roslynator.CommandLine/0.7.1": {}
     }
   },
   "libraries": {
@@ -18,6 +24,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Roslynator.Analyzers/4.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SDnYINWUo4n7/OsU2+ygeYexLWZ7KoMIfuNVY4V0S7ANVNHeg9YgEpK7G0zlTJmvWdIuoc0A85zZoyIyRj+Tag==",
+      "path": "roslynator.analyzers/4.6.1",
+      "hashPath": "roslynator.analyzers.4.6.1.nupkg.sha512"
+    },
+    "Roslynator.CommandLine/0.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Lt1Jsn/63KKoLlPDt/kZ4MM1Fv2sRTOVQDfV3baFUbkZyRPsgtQYMnWr1QSnx1uPjBkN46Pd8WpT6z3w/Z0DRQ==",
+      "path": "roslynator.commandline/0.7.1",
+      "hashPath": "roslynator.commandline.0.7.1.nupkg.sha512"
     }
   }
 }

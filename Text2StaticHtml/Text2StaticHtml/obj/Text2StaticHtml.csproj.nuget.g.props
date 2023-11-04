@@ -13,4 +13,8 @@
     <SourceRoot Include="C:\Users\dioio\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgRoslynator_CommandLine Condition=" '$(PkgRoslynator_CommandLine)' == '' ">C:\Users\dioio\.nuget\packages\roslynator.commandline\0.7.1</PkgRoslynator_CommandLine>
+    <PkgRoslynator_Analyzers Condition=" '$(PkgRoslynator_Analyzers)' == '' ">C:\Users\dioio\.nuget\packages\roslynator.analyzers\4.6.1</PkgRoslynator_Analyzers>
+  </PropertyGroup>
 </Project>
