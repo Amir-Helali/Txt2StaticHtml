@@ -39,6 +39,14 @@ This porject uses Roslynator analyzers as linter.
 - Use Rosylnator extension available for Visual Studio Code and Visual Studio.
 ___
 
+## Testing
+
+This project uses NUnit as a testing framework.
+- After creating new functionalities or making changes, please write test functions to check they function probably.
+- For Visual Studio, Create and add a new test class to the project and run the tests through the test explorer.
+- For Visual Studio Code, make sure you have [C# Dev Kit](https://code.visualstudio.com/docs/csharp/get-started) installed. Then, like Visual Studio create and add a new test class to the project and run the tests,
+___
+
 ## Making Changes
 
 1. Make your changes based on the requirements provided for the issue you will be working on.
