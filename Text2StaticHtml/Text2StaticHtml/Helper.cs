@@ -48,12 +48,20 @@ namespace Text2StaticHtml
         // Creates a new directory everytime based on the path provided
         public static void OutputDirectoryHandler(string path)
         {
-            if (Directory.Exists(path))
+            try
             {
-                Directory.Delete(path, true);
-            }
+                if (Directory.Exists(path))
+                {
+                    Directory.Delete(path, true);
+                }
 
-            Directory.CreateDirectory(path);
+                Directory.CreateDirectory(path);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
         }
 
         // Converts the contents of a text file to html and returns the converted content as a string
@@ -71,9 +79,10 @@ namespace Text2StaticHtml
             {
                 Console.WriteLine("MD File");
                 md = true;
-                if (paragraphs[0].StartsWith("# "))
+                if (paragraphs[0].StartsWith("#"))
                 {
                     html += $"\n\t<h1>\n\t{paragraphs[0].Replace("#", "")}\n\t</h1>";
+                    paragraphs[0] = "";
                 }
             }
             else if (fileExt == ".txt")
