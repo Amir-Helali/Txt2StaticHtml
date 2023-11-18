@@ -7,10 +7,11 @@ namespace Text2StaticHtmlNunitTest;
 
 public class HelperTests
 {
-    private string TestDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\TestDirectory";
-    private string OutputDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\TestOutputDirectory";
-    private string TextFileTest = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\TestInputDirectory\\Example2.txt";
-    private string MdFileTest = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\TestInputDirectory\\Example4.md";
+    private string currD = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net6.0","\\TestInputDirectory");
+    private string TestDirectory = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net6.0", "\\TestDirectory");
+    private string OutputDirectory = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net6.0", "\\TestOutputDirectory");
+    private string TextFileTest = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net6.0", "\\TestInputDirectory\\Example2.txt");
+    private string MdFileTest = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net6.0", "\\TestInputDirectory\\Example4.md");
     private string StyleSheet = "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css";
 
     [SetUp]
