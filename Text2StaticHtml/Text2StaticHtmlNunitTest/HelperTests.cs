@@ -7,11 +7,11 @@ namespace Text2StaticHtmlNunitTest;
 
 public class HelperTests
 {
-    private string currD = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net6.0","\\TestInputDirectory");
     private string TestDirectory = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net6.0", "\\TestDirectory");
     private string OutputDirectory = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net6.0", "\\TestOutputDirectory");
     private string TextFileTest = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net6.0", "\\TestInputDirectory\\Example2.txt");
     private string MdFileTest = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net6.0", "\\TestInputDirectory\\Example4.md");
+    private string HtmlFileTest = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net6.0", "\\TestInputDirectory\\InvalidExampleHtml.html");
     private string StyleSheet = "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css";
 
     [SetUp]
@@ -164,5 +164,11 @@ public class HelperTests
         string convertedHtmlFile = Path.Combine(OutputDirectory, "Example4.html");
         string html = File.ReadAllText(convertedHtmlFile);
         Assert.IsTrue(html.Contains("</a>"));
+    }
+    [Test]
+    public void FinalizeOutput_InvalidInputFile()
+    {
+        bool retVal = Helper.FinalizeOutput(HtmlFileTest, OutputDirectory);
+        Assert.IsFalse(retVal);
     }
 }
