@@ -127,13 +127,19 @@ namespace Text2StaticHtml
         }
 
         // Creates the html file(s) and saves them to the approprite directory
-        public static void FinalizeOutput(string path, string outPutDirectory, string stylesheetUrl = "", string lang = "en-CA")
+        public static bool FinalizeOutput(string path, string outPutDirectory, string stylesheetUrl = "", string lang = "en-CA")
         {
+            bool retVal = false;
             string textFileName = Path.GetFileName(path);
-            string htmlFileName = Path.GetFileNameWithoutExtension(path) + ".html";
-            string outputFilePath = Path.Combine(outPutDirectory, htmlFileName);
-            string html = TextToHtmlConverter(textFileName, path, stylesheetUrl, lang);
-            File.WriteAllText(outputFilePath, html);
+            if (Path.GetExtension(textFileName) == ".md" || Path.GetExtension(textFileName) == ".txt")
+            {
+                string htmlFileName = Path.GetFileNameWithoutExtension(path) + ".html";
+                string outputFilePath = Path.Combine(outPutDirectory, htmlFileName);
+                string html = TextToHtmlConverter(textFileName, path, stylesheetUrl, lang);
+                File.WriteAllText(outputFilePath, html);
+                retVal = true;
+            }
+            return retVal;
         }
     }
 }
