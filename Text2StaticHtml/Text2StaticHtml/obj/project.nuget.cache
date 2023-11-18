@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "8DM2/UKxjR9gp3psBURQbcvHG8b9FB3HOAwiwEGPH6J7JLwII8W7Ya3j9U9F6MD856x1s0FxFG4+J04B4D7epg==",
+  "dgSpecHash": "cGEK+4V+MCaw20SdVkO52fETddgiEdrU4iSZTTB0tnLmNXvo6qQtIL1CWanisdHUMzHPMBghi0Wm6KgO9oCyCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dioio\\Desktop\\OpenSource\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\Text2StaticHtml.csproj",
+  "projectFilePath": "G:\\GithubFinalSem\\Txt2StaticHtml\\Text2StaticHtml\\Text2StaticHtml\\Text2StaticHtml.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dioio\\.nuget\\packages\\roslynator.analyzers\\4.6.1\\roslynator.analyzers.4.6.1.nupkg.sha512",
-    "C:\\Users\\dioio\\.nuget\\packages\\roslynator.commandline\\0.7.1\\roslynator.commandline.0.7.1.nupkg.sha512"
+    "C:\\Users\\lemon\\.nuget\\packages\\roslynator.analyzers\\4.6.1\\roslynator.analyzers.4.6.1.nupkg.sha512",
+    "C:\\Users\\lemon\\.nuget\\packages\\roslynator.commandline\\0.7.1\\roslynator.commandline.0.7.1.nupkg.sha512"
   ],
   "logs": []
 }

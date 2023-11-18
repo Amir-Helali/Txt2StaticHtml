@@ -171,4 +171,11 @@ public class HelperTests
         bool retVal = Helper.FinalizeOutput(HtmlFileTest, OutputDirectory);
         Assert.IsFalse(retVal);
     }
+
+    [Test]
+    public void FinalizeOutput_NonExistentFile_ThrowsException()
+    {
+        string nonExistentFile = Path.Combine(TestDirectory, "nonexistent.txt");
+        Assert.Throws<FileNotFoundException>(() => Helper.FinalizeOutput(nonExistentFile, OutputDirectory));
+    }
 }
