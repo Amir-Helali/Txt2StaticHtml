@@ -131,14 +131,14 @@ namespace Text2StaticHtml
         {
             bool retVal = false;
             string textFileName = Path.GetFileName(path);
-            if (Path.GetExtension(textFileName) == ".md" || Path.GetExtension(textFileName) == ".txt")
-            {
+            /*if (Path.GetExtension(textFileName) == ".md" || Path.GetExtension(textFileName) == ".txt")
+            {*/
                 string htmlFileName = Path.GetFileNameWithoutExtension(path) + ".html";
                 string outputFilePath = Path.Combine(outPutDirectory, htmlFileName);
                 string html = TextToHtmlConverter(textFileName, path, stylesheetUrl, lang);
                 File.WriteAllText(outputFilePath, html);
                 retVal = true;
-            }
+            //}
             return retVal;
         }
     }
